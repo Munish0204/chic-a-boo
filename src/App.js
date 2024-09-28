@@ -3,24 +3,36 @@ import './App.css';
 import { BrowserRouter, Routes , Route } from 'react-router-dom';
 import Header from './Components/Header/index';
 import Home from './Pages/Home/index'
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 const MyContext = createContext();
 
 function App() {
 
-  const values={
-    const [countryList,setCountryList] = useState([]);
+  const [countryList, setCountryList] = useState([]);
+  
+  useEffect(()=>{
+    getCountry("https://countriesnow.space/api/v0.1/countries");
+  },[]);
+
+  const getCountry = async(url)=>{
+    const response = await axios.get(url);
+    setCountryList(response.data.data)
+    console.log(response.data.data);
+  }
+
+  const value = {
+    countryList,
   }
 
   return (
     <BrowserRouter>
-    <MyContext.Provider value={values}>
-    <Header />
-    <Routes>
-      <Route path="/" exact={true} element={<Home />} />
-    </Routes>
+    <MyContext.Provider value={value}>
+      <Header />
+      <Routes>
+        <Route path="/" exact={true} element={<Home />} />
+      </Routes>
     </MyContext.Provider>
     </BrowserRouter>
   );
