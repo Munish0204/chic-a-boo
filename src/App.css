@@ -17,6 +17,18 @@
 }
 }
 
+::-webkit-scrollbar{
+  width: 8px !important;
+  height: 8px !important;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #ccc !important;
+}
+
+::-webkit-scrollbar-track{
+  background: transparent !important;
+}
 
 .headerWrapper{
   padding-bottom: 5px;
@@ -78,7 +90,7 @@
   opacity: 0.7;
 }
 
-.header .headerSearch{
+.headerSearch{
   width: 60%;
   height: 60px;
   background: #f3f4f7;
@@ -89,7 +101,7 @@
   border: 1px solid rgba(0,0,0,0.1);
 }
 
-.header .headerSearch input{
+.headerSearch input{
   background: transparent !important;
   outline: none !important;
   font-size: 18px;
@@ -100,9 +112,12 @@
   padding: 0px 20px !important;
 }
 
-.header .headerSearch input::-webkit-input-placeholder{color: rgba(0,0,0,0.6);}
+.headerSearch input::-webkit-input-placeholder
+{
+  color: rgba(0,0,0,0.6);
+}
 
-.header .headerSearch button{
+.headerSearch button{
   position: absolute;
   top: 0;
   right: 15px;
@@ -114,10 +129,9 @@
   color: #000;
 }
 
-.header .headerSearch button svg{
+.headerSearch button svg{
   font-size: 25px;
-  margin-top: 20px;
-
+  opacity: 0.8;
 }
 
 .circle{
@@ -153,7 +167,7 @@
 .cartTab .count{
   position: absolute;
   top: -6px;
-  right: -3px;
+  right: -4px;
   background: #ea2b0f;
   border-radius: 50%;
   color: #fff;
@@ -162,8 +176,54 @@
 }
 nav .allcartTab{
   background: #2bbef9;
-  padding: 8px 30px !important;
+  padding: 10px 15px !important;
   border-radius: 30px !important;
+}
+
+.locationModal .MuiPaper-elevation{
+  padding: 25px;
+  position: relative;
+}
+
+.locationModal .countryList{
+  margin-bottom: 0px;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.locationModal .countryList li{
+  width: 100%;
+  list-style: none;
+}
+
+.locationModal .countryList li button{
+  width: 100%;
+  text-transform: capitalize !important;
+  color: #000 !important;
+  justify-content: flex-start !important;
+  padding: 10px 20px !important;
+}
+
+.locationModal .close_{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #000 !important;
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+}
+
+nav .navPart1{
+  max-width: 20%;
+  flex: 20%;
+}
+
+nav .navPart2{
+  max-width: 80%;
+  flex: 80%;
 }
 
 nav .allcartTab *{
@@ -178,7 +238,41 @@ nav .allcartTab .text{
   font-weight: 600;
 }
 
-nav .allcartTab svg{
+nav .allcartTab .icon1 svg{
   font-size: 20px !important;
-
 }
+
+nav .allcartTab .icon2 svg{
+  font-size: 15px !important; 
+}
+
+nav .navPart2 ul{
+  margin-bottom: 0px;
+}
+
+nav .navPart2 ul li a button{
+  font-size: 14px !important;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgba(0,0,0,0.6);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 25px;
+}
+
+nav .navPart2 ul li a{
+  text-decoration: none;
+}
+
+nav .navPart2 ul li a:hover{
+  background: #f0faff;
+  color: #2bbef9;
+}
+
+nav .navPart2 ul li a svg{
+  font-size: 20px;
+}
+
