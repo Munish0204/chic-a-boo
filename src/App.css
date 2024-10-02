@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+
 *{
   margin: 0;
   padding: 0;
   font-family: "Lato",sans-serif;
   font-size: 14px;
+  color: rgba(0,0,0,0.8);
 }
 
-.bg-blue
-{
-  background: #233a95;
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
 }
 
 @media (min-width: 1400px){
@@ -16,6 +24,19 @@
   max-width: 1200px;
 }
 }
+
+.cursor{
+  cursor: pointer;
+}
+
+.text-light{
+  color: #8b8b8b !important;
+}
+
+.text-sml{
+  font-size: 14px;
+}
+
 
 ::-webkit-scrollbar{
   width: 8px !important;
@@ -32,7 +53,6 @@
 
 .headerWrapper{
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding-bottom: 10px;
 }
 
 .headerWrapper .top-strip{
@@ -228,6 +248,51 @@ nav .allcartTab{
 nav .navPart1{
   max-width: 20%;
   flex: 20%;
+
+}
+
+nav .navPart1 .catWrapper{
+  position: relative;
+}
+
+nav .navPart1 .catWrapper .sidebarNav{
+  width: 100%;
+  height: 105px;
+  background: #fff;
+  position: absolute;
+  top: 136%;
+  left: 0px;
+  border:  1px solid rgba(0,0,0,0.1);
+  padding: 15px 0px;
+  transition: all 0.2s;
+ opacity: 0;
+ z-index: 100;
+
+}
+
+nav .navPart1 .catWrapper .sidebarNav.open {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+nav .navPart1 .catWrapper .sidebarNav ul li{
+  width: 100%;
+  list-style: none;
+  padding: 0px 10px;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li button{
+  color: #000;
+  width: 100%;
+  justify-content: flex-start;
+  text-transform: capitalize !important;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li button:hover{
+  background: transparent !important;
+
 }
 
 nav .navPart2{
@@ -285,3 +350,380 @@ nav .navPart2 ul li a svg{
   font-size: 20px;
 }
 
+nav .navPart2 ul li{
+  position: relative;
+  padding-bottom: 20px;
+}
+
+nav .navPart2 ul li .submenu{
+  position: absolute;
+  top: 150%;
+  left: 0px;
+  min-width: 200px;
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  z-index: 100;
+}
+
+nav .navPart2 ul li .submenu a{
+  display: block;
+  width: 100%; 
+}
+
+nav .navPart2 ul li .submenu a button{
+  width: 100%;
+  justify-content: flex-start !important;
+  border-radius: 0px !important;
+  text-transform: capitalize;
+  font-weight: 600 !important;
+
+}
+
+nav .navPart2 ul li:hover{
+  background: #f1f1f1 !important;
+}
+
+nav .navPart2 ul li:hover .submenu{
+  opacity: 1;
+  visibility: inherit;
+  top: 100%;
+
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li {
+  position: static;
+  padding-right: 15px;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li .submenu{
+  position: absolute;
+  top: 0px;
+  left: 102%;
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2 ease-in-out;
+  border-left: 1px solid rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li:hover .submenu{
+  opacity: 1;
+  visibility: inherit;
+  left: 100%;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li:hover .submenu button{
+  border-radius: 30px !important;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li button svg{
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.homeBannerSection{
+  position: relative;
+  overflow: hidden;
+}
+
+.homeBannerSection .slick-arrow{
+    position: absolute;
+    top: 45%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: #444444;
+    border-radius: 100%;
+    font-family: FontAwesome !important;
+    font-weight: bold;
+}
+
+.homeBannerSection .slick-arrow.slick-next{
+  right: 25px !important;
+}
+
+.homeBannerSection .slick-arrow.slick-prev {
+  left: 25px !important;
+}
+
+.homeBannerSection *{
+  outline: none !important;
+  
+}
+
+
+.homeBannerSection .slick-arrow.slick-next::before{
+  color: #fff;
+  font-family: FontAwesome !important;
+}
+
+.homeBannerSection .slick-arrow.slick-arrow.slick-prev::before{
+  color: #fff;
+  font-family: FontAwesome !important;
+}
+
+.homeProducts{
+  padding: 25px 0px;
+  width: 100%;
+}
+
+.homeProducts .banner{
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.hd{
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.viewAllBtn{
+  padding: 5px 25px !important;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  border-radius: 30px !important;
+  color: #414141 !important;
+  font-weight: 600;
+  text-transform: capitalize !important;
+}
+
+.viewAllBtn svg{
+  font-size: 20px;
+}
+
+.productItem{
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  position: relative;
+}
+
+.productItem .badge{
+  display: inline-block;
+  padding: 7px 10px;
+  position: absolute;
+  top: 5%;
+  left: 20px;
+  z-index: 100;
+}
+.productItem .info h4{
+  font-family: 15px;
+  font-weight: 600;
+}
+
+.productItem .info{
+  padding: 15px;
+}
+
+.productItem .info .oldPrice{
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.2);
+  text-decoration: line-through;
+}
+
+.productItem .info .netPrice{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.productItem .actions{
+  position: absolute;
+  top: 20px;
+  right: -100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.productItem .actions button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px !important;
+  height: 40px !important;
+  width: 40px !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  box-shadow: 0 1px 3px rgba(0 0 0 /12%),0 1px 2px rgba(0 0 0 /24%) !important;
+  transition: all 0.0s !important;
+}
+
+.productItem .actions button svg{
+  color: #000 !important;
+  opacity: 0.8;
+  pointer-events: none;
+  font-size: 15px;
+}
+
+.productItem .actions button:hover{
+  background: lightblue !important;
+}
+
+.productItem .imgWrapper{
+  overflow: hidden;
+}
+
+.productItem .imgWrapper img{
+  transition: all 0.3s ease-in-out;
+}
+
+.productItem .imgWrapper:hover img{
+  transform: scale(1.1);  
+}
+
+.productItem .imgWrapper:hover .actions{
+  opacity: 1;
+  right: 10px;
+}
+
+.productItem .actions button:hover svg{
+  color: #fff !important;
+
+}
+
+.product_row .productItem{
+  border-right: 1px solid transparent !important;
+}
+
+.product_row .swiper-slide:last-child .productItem{
+  border: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+.swiper{
+  padding-right: 1px !important;
+}
+
+.badge-primary{
+  background-color: #2bbef9;
+}
+
+.homeCat{
+  padding: 50px;
+}
+
+
+.homeCat .swiper .item{
+  padding: 15px;
+  width: 100%;
+  height: auto; 
+  border-radius: 10px;
+}
+
+.homeCat .swiper .item img{
+  width: 80%;
+}
+
+
+
+.homeCat .swiper-button-prev{
+  right: 100px !important;
+}
+
+.bannerSec{
+  gap: 15px;
+}
+
+.sticky{
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+}
+
+.newsLetterSection{
+  width: 100%;
+  height: auto;
+  background: #233a95;
+  position: relative;
+  overflow: hidden;
+  padding: 70px 0px;
+}
+
+.newsLetterSection .col-md-6{
+  position: static !important;
+}
+
+.newsLetterSection p{
+  font-size: 18px;
+  margin: 10px 0px !important;
+}
+
+.newsLetterSection h3{
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.newsLetterSection p .text-light{
+  color: #fff !important;
+  opacity: 0.5;
+  font-size: 15px;
+  display: flex;
+}
+
+.newsLetterSection img{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+
+} 
+
+.newsLetterSection form{
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  padding: 10px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.newsLetterSection form svg{
+  position: absolute;
+  top: 17px;
+  left: 10px;
+  font-size: 25px;
+  opacity: 0.3;
+}
+
+.newsLetterSection form input{
+  width: 100%;
+  height: 100%;
+  background: #fff !important;
+  outline: none !important;
+  border: 0px !important;
+  padding-left: 40px;
+  padding-right: 200px;
+}
+
+.newsLetterSection form button{
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  background: #233a95 !important;
+  font-size: 14px !important;
+  padding: 12px 25px !important;
+  color: #fff !important;
+  text-transform: capitalize !important;
+  font-weight: 600 !important;
+}
+footer{
+  width: 100%;
+  height: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 35px 0px;
+}

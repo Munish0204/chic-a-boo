@@ -17,12 +17,6 @@ const Home = () => {
         <>
             <div className="headerWrapper">
                 <div className="top-strip bg-blue">
-                    <div className="container">
-                        <p className="mb-0 mt-0 text-center">
-                            Due to the <b> COVID 19 </b> epidemic,orders may be processed with a
-                            slight delay. 
-                        </p> 
-                    </div> 
                 </div> 
                 <header className="header">
                     <div className="container">
@@ -44,7 +38,7 @@ const Home = () => {
                                 <div className=" part3 d-flex align-items-center ml-auto">
                                     <Button className="circle mr-3"> < FiUser/> </Button> 
                                     <div className="ml-auto cartTab d-flex align-item-center">
-                                        <span className="price">510.00</span>
+                                        <span className="price">$3.0</span>
                                         <div className="position-relative ml-2">
                                             <Button className="circle">< IoBagOutline/></Button>
                                             <span className="count d-flex align-item-center justify-content-center">1
